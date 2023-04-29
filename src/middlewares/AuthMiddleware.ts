@@ -1,20 +1,19 @@
 import { Request, Response, NextFunction } from "express";
-import jwt from "jsonwebtoken";
+import Authentication from "../utils/Authentication";
 
 export const auth = ( req: Request, res: Response, next: NextFunction) :any => {
-    if(!req.headers.authorization){
-        return res.send({message: "Token not found"});
+    const userSecret = req.headers['x-secret-key'] as string;
+    if(!userSecret){
+        return res.send({message: "x-secret-key must be included in the headers"});
     } else{
-        let scretKey = process.env.JWT_SECRET_KEY || "ksadaskdj";
-        const token: string = req.headers.authorization.split(" ")[1];
+        let authSecret = process.env.SECRET_KEY || "k4d4r15m4n";
     
         try {
-            const credential: string | object = jwt.verify(token, scretKey);
+            const credential: boolean = Authentication.compareSecret(userSecret, authSecret);
             if(credential){
-                req.app.locals.credential = credential;
               return next();
             }else{
-                return res.send({message: "Token is invalid"});
+                return res.send({message: "Secret is invalid"});
             }
         } catch (error) {
             return res.send(error);        
