@@ -6,7 +6,7 @@ export const auth = ( req: Request, res: Response, next: NextFunction) :any => {
     if(!userSecret){
         return res.send({message: "x-secret-key must be included in the headers"});
     } else{
-        let authSecret = process.env.SECRET_KEY || "k4d4r15m4n";
+        let authSecret = process.env.SECRET_KEY as string;
     
         try {
             const credential: boolean = Authentication.compareSecret(userSecret, authSecret);

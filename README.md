@@ -20,7 +20,7 @@ yarn dev
 ```
 
 custom headers x-secret-key value
-Open [http://localhost:8000](http://localhost:3000) with 
+Open [http://localhost:8000](http://localhost:3000) with postman for testing
 
 create new migrations and model :
  ```bash
