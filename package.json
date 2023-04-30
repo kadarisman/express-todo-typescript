@@ -9,7 +9,8 @@
   "scripts": {
     "tsc": "rm -rf build/ && tsc",
     "ts": "rm -rf build/ && tsc -w",
-    "dev": "nodemon ./build/index.js"
+    "dev": "nodemon ./build/index.js",
+    "add-build": "git add build"
   },
   "devDependencies": {
     "@types/compression": "^1.7.2",
