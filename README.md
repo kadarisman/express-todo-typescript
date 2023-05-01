@@ -2,7 +2,7 @@ This is a simple todo list [Express Js](https://expressjs.com/) restfull api pro
 
 ## Demo
 
-GET [https://express-todo-typescript.vercel.app/todos)](https://express-todo-typescript.vercel.app/todos)
+GET [https://express-todo-typescript.vercel.app/todos](https://express-todo-typescript.vercel.app/todos)
 
 GET [https://express-todo-typescript.vercel.app/todos/1](https://express-todo-typescript.vercel.app/todos/1)
 
