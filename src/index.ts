@@ -1,7 +1,6 @@
-import express, {Application, Request, Response} from "express";
+import express, {Application} from "express";
 import bodyParser from "body-parser";
 import compression from "compression";
-import helmet from "helmet";
 import cors from "cors";
 import { config as dotenv } from "dotenv";
 
@@ -21,7 +20,6 @@ class App {
     protected plugins(): void{
         this.app.use(bodyParser.json());
         this.app.use(compression());
-        this.app.use(helmet());
         this.app.use(cors());
     }
 
