@@ -1,16 +1,16 @@
-This is a simple todo list [Express Js](https://expressjs.com/) restfull api project with Typescript and kenx js query builder for starting restfull api project.
+This is a simple todo list [Express Js](https://expressjs.com/) restfull api project with Typescript and knex js query builder for starting restfull api project.
 
 ## Demo
 
-GET [Get todo](https://express-todo-typescript.vercel.app/todos)
+GET [https://express-todo-typescript.vercel.app/todos)](https://express-todo-typescript.vercel.app/todos)
 
-GET [Get todo by id](https://express-todo-typescript.vercel.app/todos/1)
+GET [https://express-todo-typescript.vercel.app/todos/1](https://express-todo-typescript.vercel.app/todos/1)
 
-POST [Create todo](https://express-todo-typescript.vercel.app/todos/)
+POST [https://express-todo-typescript.vercel.app/todos](https://express-todo-typescript.vercel.app/todos)
 
-PUT [Update todo](https://express-todo-typescript.vercel.app/todos/1)
+PUT [https://express-todo-typescript.vercel.app/todos/1](https://express-todo-typescript.vercel.app/todos/1)
 
-DELETE [Delete todo](https://express-todo-typescript.vercel.app/todos/1)
+DELETE [https://express-todo-typescript.vercel.app/todos/1](https://express-todo-typescript.vercel.app/todos/1)
 
 request header requires 'x-secret-key' for create, update, delete
 
