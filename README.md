@@ -12,16 +12,17 @@ PUT [https://express-todo-typescript.vercel.app/todos/1](https://express-todo-ty
 
 DELETE [https://express-todo-typescript.vercel.app/todos/1](https://express-todo-typescript.vercel.app/todos/1)
 
-request header requires 'x-secret-key' for create, update, delete
-
+In request header requires **x-secret-key** value for create, update, delete todo
 
 ## Getting Started
 
 ```bash
 git clone https://github.com/kadarisman/express-todo-typescript
+```
+Create a mysql database from your machine, then run sql script below
 
-#create a mysql database from your machine run sql script below:
-CREATE DATABASE IF NOT EXISTS `todo_list` /*!40100 DEFAULT CHARACTER SET utf8 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+```bash
+CREATE DATABASE IF NOT EXISTS `todo_list`;
 USE `todo_list`;
 CREATE TABLE IF NOT EXISTS `todos` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -31,20 +32,27 @@ CREATE TABLE IF NOT EXISTS `todos` (
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+```
 
-edit file .env.example according to your database configuration
-change .env.example file name to .env
+Edit file **.env.example** according to your database configuration
+Rename **.env.example** file to **.env**
+Open terminal : 
 
-open terminal : 
+```bash
 npm install
 npm run ts
-open another terminal :
+#or
+yarn install
+yarn ts
+```
+Open another terminal :
+
+```bash
 npm run dev
 # or
-yarn ts
 yarn dev
 ```
 
-custom headers x-secret-key value
+In request header requires **x-secret-key** value
 Open [http://localhost:8000/todos](http://localhost:8000/todos) with postman for testing
 
