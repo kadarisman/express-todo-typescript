@@ -45,6 +45,12 @@ class ModelTodo {
   delete = async (id: number): Promise<void> => {
    return await knex('todos').where({ id }).del();
   }
+
+  clear = async (): Promise<void> => {
+    return await knex('todos').whereNotIn("id", [1, 2, 3])
+    .del();
+  }
+
 }
 
 export default new ModelTodo();

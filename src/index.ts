@@ -3,6 +3,8 @@ import bodyParser from "body-parser";
 import compression from "compression";
 import cors from "cors";
 import { config as dotenv } from "dotenv";
+import { CronJob } from 'cron';
+import { ClearTodo } from "./schedule/ClearTodo";
 
 //routers
 import IndexRoutes from "./routers/IndexRoutes";
@@ -15,6 +17,7 @@ class App {
         this.plugins();
         this.routes();
         dotenv();
+        this.clearTodo();
     }
 
     protected plugins(): void{
@@ -25,6 +28,11 @@ class App {
 
     protected routes(): void{       
         this.app.use("/", IndexRoutes);
+    }
+
+    protected clearTodo(): void{
+        const scheduleClearTodo = new CronJob("0 */2 * * *", ClearTodo);
+        scheduleClearTodo.start();
     }
 }
 
