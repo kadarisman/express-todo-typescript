@@ -8,7 +8,7 @@ class TodoController implements IController {
     try {
         const todos: Todo[] = await ModelTodo.getAll();
         if(todos){
-            return res.status(200).send({todos});
+            return res.status(200).send(todos);
         }else{
             return res.status(404).send({message: "Todo not found"});
         }
@@ -34,7 +34,7 @@ class TodoController implements IController {
       const id: number = Number(req.params.id);
       const todo: Todo | undefined = await ModelTodo.read(id);
       if (todo) {
-        return res.status(200).send({todo});
+        return res.status(200).send(todo);
       } else {
        return res.status(404).send({ message: `Todo with id ${id} not found`});
       }
